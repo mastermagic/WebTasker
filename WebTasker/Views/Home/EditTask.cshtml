@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    @model WebTasker.Models.Task
+    @using WebTasker.Helpers
+    @using (Html.BeginForm("EditTask", "Home", FormMethod.Post))
+    {
+        <h3>Edit task</h3>
+        <fieldset>
+            <table>
+                <tr>
+                    <td><p> @Html.LabelFor(model => model.Name, "What you want to do") </p></td>
+                    <td>
+                        @Html.EditorFor(model => model.Name)
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>
+                        @Html.LabelFor(model => model.Text, "Description")
+                    </p></td>
+                    <td>
+                        @Html.EditorFor(model => model.Text)
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>
+                        @Html.LabelFor(model => model.Status, "State")
+                    </p></td>
+                    <td>
+                        @Html.DropDownListFor(model => model.Status, ListHelper.StateList())
+                    </td>
+                </tr>
+                </table>
+                <p><input type="submit" value="Submit" /></p>            
+        </fieldset>
+    }
+</body>
+</html>

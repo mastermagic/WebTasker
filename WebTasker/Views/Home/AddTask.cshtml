@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+        <h3>New task</h3>
+        <fieldset>
+            <form method="post" action="">
+                <input type="hidden" value="@ViewBag.TaskId" name="TaskId" />
+                <table>
+                    <tr>
+                        <td><p>What you want to do</p></td>
+                        <td><input type="text" name="Name" /> </td>
+                    </tr>
+                    <tr>
+                        <td><p>Description :</p></td>
+                        <td>
+                            <input type="text" name="Text" />
+                        </td>
+                    </tr>
+
+                    <tr><td><input type="submit" value="Submit" /> </td></tr>
+                </table>
+            </form>
+        </fieldset>
+</div>
+</body>
+</html>

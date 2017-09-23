@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "WebTasker";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>WebTasker</title>
+</head>
+<body>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li><p><a href="/Home/AddTask">I want to..</a></p></li>
+        </ul>
+    </div>
+    <div>
+        <table>
+            @foreach (var b in ViewBag.TaskList)
+            {
+                <tr>
+                    <td><p><input type="checkbox" checked=@b.Check readonly/></p></td>
+                    <td><p><a href="/Home/EditTask/@b.Id"><span class=@b.Status>@b.Name</span></a></p></td>
+                </tr>
+            }
+        </table>
+        <div>@ViewBag.Count task(s) remaining</div>
+    </div>
+</body>
+</html>
